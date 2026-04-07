@@ -1,0 +1,58 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #050510;
+  --fg: #e0f7ff;
+  --neon-cyan: #22d3ee;
+  --neon-fuchsia: #e879f9;
+  --neon-violet: #8b5cf6;
+}
+
+@theme inline {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: var(--font-orbitron), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: radial-gradient(
+      ellipse 120% 80% at 50% -20%,
+      rgba(34, 211, 238, 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 80% 50% at 100% 50%,
+      rgba(232, 121, 249, 0.08),
+      transparent 45%
+    ),
+    var(--bg);
+  color: var(--fg);
+  min-height: 100dvh;
+}
+
+@keyframes neon-flicker {
+  0%,
+  100% {
+    opacity: 1;
+    filter: brightness(1);
+  }
+  50% {
+    opacity: 0.92;
+    filter: brightness(1.15);
+  }
+}
+
+.neon-border {
+  border: 1px solid rgba(34, 211, 238, 0.35);
+  box-shadow:
+    0 0 24px rgba(34, 211, 238, 0.12),
+    inset 0 0 32px rgba(139, 92, 246, 0.06);
+  animation: neon-flicker 4s ease-in-out infinite;
+}
+
+.neon-text {
+  text-shadow:
+    0 0 8px rgba(34, 211, 238, 0.6),
+    0 0 24px rgba(232, 121, 249, 0.35);
+}

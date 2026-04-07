@@ -1,0 +1,5 @@
+.DS_Store
+*.pem
+
+# Local secrets (never commit)
+web/.env.local
